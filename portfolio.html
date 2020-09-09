@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+
+<html>
+  <head>
+    <title>Ronnie Clark Jr</title>
+	<link rel="stylesheet" type="text/css" href="WebPageResumeStyle.css"/>
+	<meta charset="utf-8"/>
+	<script type="text/javascript" src="WebPageResume2.js"> </script>
+  </head>   
+  <body onload="SetUp();" onresize="resized()">
+  
+  <div id="Toolbar">
+	<button onclick="dropMenuClick()" id="ToolbarButton"> </button>
+	<div class="ButtonGroup">
+		<button onclick="goToSection(&quot;aboutMe&quot;)"> About Me </button>
+		<button onclick="goToSection(&quot;resume&quot;)"> Resume </button>
+		<button onclick="goToSection(&quot;contactMe&quot;)"> Contact me </button>
+		<button onclick="goToSection(&quot;projects&quot;)"> Projects </button>
+		<button onclick="goToSection(&quot;home&quot;)"> Home </button>
+	</div>
+  </div>
+  	
+	<div class="section" id="aboutMe">
+			<div id="aboutImageDiv">
+				<img src="portrate.jpg" alt="image of me" id="aboutImage" />
+			</div>
+			<p id = "aboutMePlaceHolder"> </p>
+			<span id="aboutTitleBar"> </span>
+			<div id="aboutTitlePlaceHolder">
+				<p id="aboutTitle"> Mission-driven software developer with a passion for modular programming, collaboration, and mentoring. </p>
+				<p> Mission-driven software developer with a passion for modular programming, collaboration, and mentoring. </p>	
+			</div>
+			<div id="aboutParagraph">
+				<span class="aboutParagraphPadding"> </span>
+				<p id="aboutParagraphTitle"> Hi, I'm Ronnie Clark! </p>
+				<span class="aboutParagraphPadding"> </span>
+				<p id="aboutParagraphBody">I am a formally taught software developer that takes pride in producing high-quality code. I specialize in converting stakeholder's requirements into software functionality. My time as an undergrad computer science tutor shows that I am a reliable mentor and leader, that brings a morale boost to any team I'm on.</p> 
+			</div>
+			<div id="aboutSymbols">
+				<div id="detail" class="aboutSymbol">
+					<button onmouseover="aboutSymbolHover(&quot;detail&quot;)" onmouseout="aboutSymbolMouseOut(&quot;detail&quot;)" onclick="aboutSymbolSelect(&quot;detail&quot;)"> </button>
+					<button onmouseover="aboutSymbolHover(&quot;detail&quot;)" onmouseout="aboutSymbolMouseOut(&quot;detail&quot;)" id="detailText" class="symbolTitle" onclick="aboutSymbolSelect(&quot;detail&quot;)"> Attention to Detail </button>
+				</div>
+				<div id="collaboration" class="aboutSymbol">
+					<button onmouseover="aboutSymbolHover(&quot;collaboration&quot;)" onmouseout="aboutSymbolMouseOut(&quot;collaboration&quot;)" onclick="aboutSymbolSelect(&quot;collaboration&quot;)"></button>
+					<button onmouseout="aboutSymbolMouseOut(&quot;collaboration&quot;)" onmouseover="aboutSymbolHover(&quot;collaboration&quot;)" id="collaborationText" onclick="aboutSymbolSelect(&quot;collaboration&quot;)" class="symbolTitle"> Collaborative </button>
+				</div>
+				<div id="problemSolver" class="aboutSymbol">
+					<button onmouseover="aboutSymbolHover(&quot;problemSolver&quot;)" onmouseout="aboutSymbolMouseOut(&quot;problemSolver&quot;)" onclick="aboutSymbolSelect(&quot;problemSolver&quot;)"></button>
+					<button onmouseout="aboutSymbolMouseOut(&quot;problemSolver&quot;)" onmouseover="aboutSymbolHover(&quot;problemSolver&quot;)" id="problemSolverText" onclick="aboutSymbolSelect(&quot;problemSolver&quot;)" class="symbolTitle"> Problem Solver </button>
+				</div>
+				<p id="aboutSymbolMessage"> Message </p>
+			</div>
+	</div>
+	<div class="section" id="sectionSpacing1"> </div>
+	<div class="section" id="resume">
+		<div id="externalLink">
+		</div>
+		<p id="resumeTitle"> Resume </p>
+		<img id="resumeDownload" src="downloadSymbol.png"></img>
+		<a href="Resume.docx"> </a>
+		<img src = "resume screenshot.PNG" id="resumePic" alt ="resume screenshot" >
+		<div id="linksDiv"> 
+			<button id="linkedin" onclick="goToLinkedIn()"> </button> 
+			<button id="github" onclick="goToGitHub()"> </button>
+		</div>
+		<div id="contactMe">
+		
+			<p id="contactMeTitle"> Contact Me! </p>
+			<p id="errorMessage"> Invalid email address </p>
+			<div id="contactErrorMessage">
+			</div>
+			<div id="contactContent">				
+				<div class ="inputDiv">
+					<input type="email" name="Email" onfocus="inputFocused(&quot;email&quot;)" id="emailInput" onblur="inputFocusLoss(&quot;email&quot;)" oninput="inputChange()" />
+					<button class="inputLabel" id="email" onclick="inputFocused(&quot;email&quot;)">Email</button>
+				</div>
+				<div class ="inputDiv">
+					<input type="text" name="Message" id="messageDiv" onfocus="inputFocused(&quot;message&quot;)" onblur="inputFocusLoss(&quot;message&quot;)" oninput="inputChange()"/>
+					<button class="inputLabel" id="inputMessage" onclick="inputFocused(&quot;message&quot;)">Message</button>
+				</div>
+				<div class="inputDiv">
+					<button id="contactSend" onclick="contactSend()"> Send </button>
+					<button  id="sendSecurityCheck"> </button>
+				</div>
+			</div>
+		</div>
+	</div>
+	<div class="section" id="sectionSpacing2"> </div>
+	<div class="section" id="projects">
+		<p id="projectsTitle"> Projects </p>
+		<div class="project" id = "thisWebsite"> 
+			<img class="projectPhoto" src = "webpagePhoto.PNG" alt="screen shot of webpage"> </img>
+			<Button onclick="goToGitHub()" class="projectTitle"> My Web Page Portfolio </Button>
+			<p class="projectBody">This web page incorporates a combination of HTML, CSS, and Javascript. I wrote documentation, used intuitive variable names, and utilized proper whitespace to increase the system's maintainability. I implemented algorithm-driven animations and UI interaction feedback in javascript. This project has a total of 1,760 lines of code, all made by me. </p>
+		</div>
+		<div class="project"> 
+			<Button onclick="goToGitHub()" class="projectTitle"> The Rod Problem </Button>
+			<div class="projectPhoto"> Created By Ronnie Clark. <br />The value for the different rod lengths (from smallest length of 1 to largest) are: 1, 5, 8, 9, 12, 13, 16. <br />The current rod length is: 7, and the cost per rod cut is: 1<br />For optimal revenue of: 16, you will need a total of just 1 cut to give you 2 rods of length 4, and 3. </div>
+			<p class="projectBody"> The rod problem is an algorithm optimization problem. I used recursion to write a memoization algorithm, and utilized dynamic programming techniques to achieve optimal time complexity. I wrote this program to demonstrates my ability to handle problems that require critical thinking. I programmed this systen in python.</p>
+		</div>
+		<div class="project"> 
+			<Button onclick="goToGitHub()" class="projectTitle"> Fizz Buzz Test </Button>
+			<div class="projectPhoto" id="FIZZBUZZ"></div>
+			<p class="projectBody">FizzBuzz is a simple program that will count from 1 to 100.  While it counts, every number that is a multiple of 3 gets printed as "FIZZ" instead, and every number that is a multiple of 5 gets printed as "BUZZ". I programmed this is Javascript.</p>
+		</div>
+	</div>
+  
+  </body>
+</html>
