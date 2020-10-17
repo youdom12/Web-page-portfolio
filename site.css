@@ -1,0 +1,914 @@
+﻿/* Please see documentation at https://docs.microsoft.com/aspnet/core/client-side/bundling-and-minification
+for details on configuring this project to bundle and minify static web assets. */
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  font-size: 14px;
+}
+@media (min-width: 768px) {
+  html {
+    font-size: 16px;
+  }
+}
+
+#header{
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 2;
+}
+
+body {
+    max-width: 1080px;
+    background: black;
+    position: relative;
+    height: 100vh;
+    width: 100vw;
+    overflow-x: hidden;
+}
+
+
+/* Sticky footer styles
+-------------------------------------------------- */
+html {
+  position: relative;
+  min-height: 100%;
+}
+
+.apply-shake {
+    animation: shake .58s;
+}
+
+.btn-description:hover:after {
+    content: 'Button Description';
+    position: absolute;
+    top: 100%;
+    left: 0%;
+    width: auto;
+    height: auto;
+    background: black;
+    animation: btn-content-anim .1s;
+    color: white;
+    text-align: center;
+    z-index: 1;
+}
+
+/*coral colored button hover animation*/
+.btn-hover-coral {
+    border-style: none;
+    position: relative;
+    color: white;
+    background: transparent;
+    border-radius: 25%;
+    z-index: 3;
+}
+
+.btn-hover-coral:hover {
+    border-style: none;
+    color: white;
+    cursor: pointer;
+    font-weight: bold;
+}
+    
+.btn-hover-coral:hover:after {
+    top: 0;
+    left: 0;
+    height: 100%;
+    width: 100%;
+}
+
+.btn-hover-coral:after {
+    position: absolute;
+    top: 100%;
+    left: 50%;
+    content: '';
+    background: linear-gradient(to bottom, #f24537 5%, #f64c72 100%);
+    background-color: #ff7f50;
+    width: 0;
+    height: 0;
+    z-index: -1;
+    transition: all .2s
+}
+
+/*Drop down navigation bar style*/
+.drop-nav-bar {
+    border-style: solid;
+    border-color: silver;
+    border-top-style: none;
+    border-width: 5px;
+    position: absolute;
+    top: 0;
+    width: 100%;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    background-color: #1a1a1ae6;
+    text-align: center;
+    box-shadow: 0px 2px 2px 2px;
+    z-index: 2;
+    transition: all .2s;
+}
+
+.drop-nav-bar:before {
+    content: "";
+    border-width: 3px;
+    width: calc(100% + 6px);
+    height: calc(100% + 10px);
+    background-color: transparent;
+    position: absolute;
+    top: -6px;
+    left: -6px;
+    border-bottom-left-radius: 25px;
+    border-bottom-right-radius: 25px;
+    border-top-style: none;
+}
+
+.navbar-drop-btn {
+    position: absolute;
+    top: calc(100% + 6px);
+    left: 47.5%;
+    width: 5%;
+    height: 85%;
+    background: url("/../images/drop down symbol.png");
+    background-color: silver;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom-right-radius: 50%;
+    border-bottom-left-radius: 50%;
+    box-shadow: 0px 2px 2px 2px;
+    transition: background-size .2s, box-shadow .2s;
+}
+
+.navbar-drop-btn:hover{
+    cursor: pointer;
+    background-color: darkgray;
+}
+
+.navbar-drop-btn:active{
+    cursor: pointer;
+    background-size: 90%;
+    transition: background-size .1s;
+}
+.navbar-drop-btn:after{
+    position: absolute;
+    content: "";
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-radius: 50%;
+    box-shadow: none;
+    transition: box-shadow .1s;
+}
+
+.navbar-drop-btn:active:after{
+    box-shadow: inset 0px 0px 2px 1px;
+}
+
+.btn-coral-round {
+    position: relative;
+    margin: 0;
+    padding: 0;
+    width: 50px;
+    border-radius: 50%;
+    height: 50px;
+    background-color: #f64c72;
+    box-shadow: 0 0 5px 3px;
+    border-color: white;
+    border-bottom-color: #bebbbb;
+    border-right-color: #bebbbb;
+    border-width: 2px;
+    transition: all .2s;
+}
+
+.btn-coral-round:hover{
+    box-shadow: 0 0 7px 4px;
+}
+
+.btn-coral {
+    box-shadow: inset 0px 1px 0px 0px #f5978e;
+    background: linear-gradient(to bottom, #f24537 5%, #f64c72 100%);
+    background-color: #f24537;
+    border-radius: 6px;
+    border: 1px solid #d02718;
+    cursor: pointer;
+    font-family: Arial;
+    font-size: 15px;
+    font-weight: bold;
+    padding: 6px 24px;
+    text-decoration: none;
+    text-shadow: 0px 1px 0px #810e05;
+    text-align: center;
+    white-space: nowrap;
+    position: relative;
+    color: white;
+    text-align: center;
+    margin: 0;
+}
+
+.btn-coral:hover{
+	background:linear-gradient(to bottom, #f64c72 5%, #f24537 100%);
+	background-color:#f64c72;
+}
+
+.btn-coral:focus{
+	outline: none;
+}
+
+.btn-coral:active{
+	top: 1px;
+}
+
+.section {
+    position: absolute;
+    max-width: 1080px;
+    left: 0;
+    height: 100vh;
+    width: calc(100% - 15px);
+    color: black;
+    background: #242582;
+    overflow: hidden;
+}
+
+.section-spacing {
+    height: 50vh;
+    z-index: -1;
+}
+
+.coral-blue {
+    background-color: #2F2FA2;
+    border-style: double;
+    border-width: 5px;
+    border-color: #f64c72;
+    color: white;
+}
+
+#home {
+    background: white;
+    padding: 1px;
+    margin: 0;
+}
+
+#home-background {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    border-style: solid;
+    background: url("../images/background.PNG");
+    background-position: center;
+    background-size: 100% 100%;
+    filter: blur(4px);
+    display: inline-block;
+}
+
+
+#homeUp {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    height: 50%;
+    background: white;
+    z-index: 1;
+    transition: all .1s;
+}
+
+#homeDown {
+    position: absolute;
+    width: 100%;
+    top: 50%;
+    height: 50%;
+    background: white;
+    z-index: 1;
+    transition: all .1s;
+}
+
+
+#homeLeft {
+    position: absolute;
+    width: 50%;
+    left: 0;
+    top: 0;
+    height: 100%;
+    background: white;
+    z-index: 1;
+    transition: all .1s;
+}
+
+#homeRight {
+    position: absolute;
+    width: 50%;
+    left: 50%;
+    top: 0;
+    height: 100%;
+    background: white;
+    z-index: 1;
+    transition: all .1s;
+}
+
+#homeSignature {
+    position: absolute;
+    left: 3%;
+    color: white;
+    top: 4%;
+    text-align: center;
+    font-size: 2vw;
+    background: transparent;
+    border-style: none;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+    cursor: pointer;
+}
+
+#homeSignature:hover{
+    cursor: pointer;
+}
+
+#homeTitle {
+    position: relative;
+    left: 0;
+    top: 0;
+    width: 100%;
+    text-align: center;
+    color: white;
+    white-space: nowrap;
+    font-weight: bold;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+    font-size: 5vw;
+    margin: 0;
+}
+
+#homeSubTitle {
+    display: inline-block;
+    position: relative;
+    margin-left: 2%;
+    margin-right: 2%;
+    text-align: center;
+    width: 96%;
+    font-size: 3vw;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+    margin: 0;
+}
+
+#aboutMe {
+    padding-top: 4%;
+}
+
+#aboutImage {
+    height: 100%;
+    padding: 0;
+    margin: 0;
+    position: absolute;
+    right: 0;
+    border-style: solid;
+    border-width: 1px;
+    border-color: black;
+    box-shadow: 0 0 5px 3px;
+}
+
+#aboutImageDiv {
+    position: relative;
+    width: 50%;
+    height: 50%;
+    max-height: 50vh;
+    display: inline-block;
+    float: left;
+}
+
+
+#aboutMeTitle{
+    position: relative;
+    width: 50%;
+    height:50%;
+    float:left;
+    padding: 0;
+    margin: 0;
+
+    border-style: solid;
+}
+
+#aboutSummary {
+    position: relative;
+    display: inline-block;
+    width: 45%;
+    height: 48%;
+    background-color: #2F2FA2;
+    padding: 2%;
+    padding-top: 0;
+    padding-bottom: 0;
+    margin-right: 5%;
+    border-left-style: none;
+    box-shadow: 5px 10px 10px #000000;
+    float: left;
+    transition: left .5s;
+    left: -44%;
+}
+
+
+#aboutSummaryTitle {
+    font-size: 134%;
+    padding: 0;
+    padding-bottom: 7.5%;
+    padding-top: 7.5%;
+    margin: 0;
+    text-align: center;
+    font-weight: bold;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+    line-height: 100%;
+}
+
+#aboutSummaryBody {
+    line-height: 1.8;
+    font-size: 95%;
+    overflow: auto;
+    display: inline-block;
+}
+
+#aboutSoftSkills {
+    position: relative;
+    width: 45%;
+    height: 48%;
+    margin-left: 5%;
+    background-color: #2F2FA2;
+    padding: 0;
+    border-style: double;
+    border-width: 5px;
+    border-color: #f64c72;
+    border-right-style: none;
+    box-shadow: 0 10px 10px #000000;
+    float: left;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+    font-weight: bold;
+    transition: left .5s;
+    left: 44%;
+}
+
+
+.softSkillSymbol {
+    position: relative;
+    width: 31%;
+    height: 9.5vw;
+    padding: 0;
+    margin-right: 1%;
+    margin-left: 1%;
+    border-style: none;
+
+    text-align: center;
+    float: left;
+    white-space: nowrap;
+    font-size: 1.3vw;
+    z-index: 1;
+    transition: top .3s;
+}
+
+
+.softSkillSymbol img:nth-child(1) {
+    height: 76%;
+    width: 50%;
+}
+
+.softSkillSymbol img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    height: 76%;
+    width: 0;
+}
+
+.softSkillSymbol:hover img:nth-child(2) {
+    position: absolute;
+    top: 0;
+    left: 25%;
+    height: 76%;
+    width: 50%;
+}
+
+#aboutSoftSkillBody {
+    position: absolute;
+    padding: 0;
+    padding-top: 15%;
+    width: 96%;
+    left: 2%;
+    display: inline-block;
+    clear: both;
+    text-shadow: none;
+    font-weight: normal;
+    line-height: 1.8;
+    font-size: 120%;
+}
+
+.softSkillSymbol:hover {
+    cursor: pointer;
+}
+
+.softSkillSymbol:hover p{
+    cursor: pointer;
+    color: grey;
+}
+
+.softSkillMessage{
+    position: absolute;
+    font-size: 0;
+}
+
+#aboutMeTitle {
+    color: white;
+    border-style: none;
+    font-size: 150%;
+    font-weight: bold;
+    text-shadow: 0px 1px 0px #810e05;
+    overflow: hidden;
+    padding-left: 1%;
+}
+
+#aboutMeTitle p {
+    position: relative;
+    transition: left .5s ease-out;
+    left: -100%;
+}
+
+#aboutTitleBar {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 1%;
+    height: 10px;
+    background: #f64c72;
+    transition: all .3s;
+    z-index: 1;
+}
+
+#resumeTitle {
+    position: relative;
+    color: white;
+    font-weight: bold;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+    bottom: 3px;
+}
+
+#resumeDiv {
+    position: relative;
+    float: left;
+    width: 457px;
+    margin-left: calc(35% - 229px);
+}
+
+#resumeContent{
+    position: relative;
+    text-align: center;
+    width: 100%;
+    line-height: 100%;
+    border-width: 1px;
+}
+
+#resumePic {
+    position: relative;
+    width: 100%;
+    box-shadow: 0 10px 15px;
+}
+
+#resumeContent p {
+    display: inline-block;
+    font-size: 35px;
+}
+
+#resumeDownload {
+    position: relative;
+    display: inline-block;
+    margin: 0;
+    font-size: 100%;
+    margin-left: 5px;
+    width: 30px;
+    height: 30px;
+    border-radius: 15px;
+    color: white;
+    background: url('../images/downloadSymbol.png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: 100%;
+    background-color: #f24537;
+    border: 1px solid #99738e;
+    cursor: pointer;
+}
+
+#resume {
+    overflow: hidden;
+}
+
+#contactMe {
+    position: relative;
+    width: 30%;
+    height: 35%;
+    border-style: double;
+    border-color: #f64c72;
+    background-color: #2F2FA2;
+    box-shadow: 10px 10px 10px;
+    margin-top: 50px;
+    float: left;
+    display: inline-block;
+    min-width: 218px;
+    left: 3px;
+}
+
+#linksDiv{
+    position: absolute;
+    top: 100%;
+    left: 0;
+    width: 100%;
+    height: 50%;
+    margin-top: 20px;
+}
+
+#linkedIn {
+    background: url("../images/linkedInSymbol.png");
+    background-color: #f64c72;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75% 75%;
+    width: 75px;
+    height: 75px;
+    margin-left: calc(25% - 37.5px);
+    margin-right: calc(25% - 37.5px);
+}
+
+#linkedIn:hover:after{
+    content: "Link to LinkedIn Account";
+}
+
+#github {
+    background: url("../images/github.png");
+    background-color: #f64c72;
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: 75% 75%;
+    width: 75px;
+    height: 75px;
+    margin-left: calc(25% - 37.5px);
+}
+
+#github:hover:after {
+    content: "Link to GitHub repository";
+}
+
+#contactMeTitle {
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 200%;
+    font-weight: bold;
+    color: white;
+    margin: 0;
+    text-shadow: 0px 4px 3px rgba(0,0,0,0.4), 0px 8px 13px rgba(0,0,0,0.1), 0px 18px 23px rgba(0,0,0,0.1);
+}
+
+#contactMeContents{
+    position: relative;
+    width: 100%;
+}
+
+.txt-input {
+    margin-top: 25px;
+    position: relative;
+    border-radius: 2px;
+    width: 100%;
+    height: 25px;
+    background: #242582;
+    border-bottom-style: solid;
+    color: grey;
+    border-width: 2px;
+}
+
+.txt-input:hover{
+    cursor: text;
+}
+
+.txt-input input{
+    background: transparent;
+    border-style: none;
+    width: 100%;
+    height: 100%;
+}
+
+.txt-input button{
+    position: absolute;
+    top: 0;
+    left: 2%;
+    border-style: none;
+    color: grey;
+    background: transparent;
+    transition: all .1s ease-in;
+    padding: 0;
+    margin: 0;
+}
+
+.txt-input button:hover{
+    cursor: text;
+}
+
+.txt-input button:focus{
+    outline: none;
+}
+
+#contactMeMessage {
+    height: 60px;
+    margin-top: 25px;
+}
+
+#projects{
+    overflow: visible;
+    height: calc(35% + 600px);
+}
+
+#projectsTitle{
+    position: relative;
+    width: 100%;
+    text-align: center;
+    font-size: 300%;
+    color: white;
+}
+
+.project {
+    position: relative;
+    width: 90%;
+    margin: 5%;
+    margin-top: 0;
+    margin-bottom: 40px;
+    height: 200px;
+    background-color: #2F2FA2;
+    border-style: SOLID;
+    border-width: 2px;
+    border-color: #99738e;
+    box-shadow: inset 0 0 10px 5PX #000000;
+}
+
+.project img{
+    position: absolute;
+	top: 10px;
+	left: 10px;
+	width: calc(30% - 20px);
+	height: calc(100% - 20px);
+	color: white;
+	overflow: auto;
+}
+
+.project div{
+    position: absolute;
+	top: 10px;
+	left: 10px;
+	width: calc(30% - 20px);
+	height: calc(100% - 20px);
+	color: white;
+	overflow: auto;
+}
+
+.project button{
+    position: absolute;
+	left: 30%;
+	top:0;
+	height: 30%;
+	background: transparent;
+	padding: 0;
+	padding-left: 1%;
+	padding-right: 2.5%;
+	border-style: none;
+	font-size: 150%;
+	color: #f64c72;
+	white-space: nowrap;
+}
+
+.project button:hover{
+    color:#c67b8b;
+}
+
+.project ul{
+    position: absolute;
+    top: -10px;
+    left: 0;
+    margin-top: -15px;
+    height: 20px;
+    width: 50%;
+    padding: 0;
+    white-space: nowrap;
+}
+
+.project li{
+    position: relative;
+    display: inline-block;
+    margin: 10px;
+    margin-top: 0;
+    margin-bottom: 0;
+    padding: 0;
+    color: white;
+    font-weight: bold;
+}
+
+.project li:after{
+    position: absolute;
+    left: -12px;
+    top: calc(50% - 5px) ;
+    content:'';
+    width: 10px;
+    height: 10px;
+    background-color: #f64c72;
+    background: url("../images/check.png");
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+}
+
+.project p {
+    position: absolute;
+    top: 25%;
+    left: 30%;
+    width: 66%;
+    height: 64%;
+    margin: 0;
+    padding-left: 1%;
+    padding-right: 2%;
+    color: white;
+    font-weight: bold;
+    overflow: auto;
+}
+
+@keyframes shake {
+    10%, 90% {
+        transform: translate3d(-1px, 0, 0);
+    }
+
+    20%, 80% {
+        transform: translate3d(2px, 0, 0);
+    }
+
+    30%, 50%, 70% {
+        transform: translate3d(-4px, 0, 0);
+    }
+
+    40%, 60% {
+        transform: translate3d(4px, 0, 0);
+    }
+}
+
+@keyframes btn-content-anim {
+    from {
+        height: 0%;
+        top: 50%;
+    }
+    to {
+        height: 100%;
+        top: 100%;
+    }
+}
+
+@media screen and (min-width: 1173px) {
+    #homeTitle {
+        font-size: 58.65px;
+        transition: font-size .1s;
+    }
+
+    #homeSubTitle {
+        font-size: 36.09px;
+        transition: font-size .1s;
+    }
+
+    #homeSignature {
+        font-size: 24.06px;
+        transition: font-size .1s;
+    }
+}
+
+@media screen and (max-width: 730px) {
+    #contactMe {
+        clear: both;
+        left: calc(50% - 109px);
+        margin-top: 5px;
+    }
+
+    .project {
+        top: 10px;
+    }
+
+    #projects{
+        padding-top: 50px;
+    }
+
+    #resume {
+        overflow: visible;
+    }
+    #resumeDiv {
+        left: calc(50% - 229px);
+        margin-left: 0;
+    }
+}
+@media screen and (min-width: 1080px) {
+    .softSkillSymbol {
+        height: 102.6px;
+        font-size: 14px;
+    }
+    #aboutSoftSkill {
+        background: red;
+        font-size: 14px;
+    }
+}

@@ -1,0 +1,93 @@
+﻿@{
+    ViewData["Title"] = "Portfolio";
+}
+<html>
+<head>
+</head>
+<body>
+    <div class="section" id="aboutMe">
+        <div id="aboutImageDiv">
+            <img src="~/images/portrate.jpg" alt="image of me" id="aboutImage" />
+        </div>
+        <div id="aboutMeTitle">
+            <span id="aboutTitleBar"> </span>
+            <p> Mission-driven software developer with a passion for modular programming, collaboration, and mentoring. </p>
+        </div>
+        <div class="coral-blue" id="aboutSummary">
+            <p id="aboutSummaryTitle"> Hi, I'm Ronnie Clark! </p>
+            <p id="aboutSummaryBody">I am a formally tought software developer that takes pride in producing high quality code. I specialize in converting stakeholder's requirements into software functionality. My time as an undergrad computer science tutor shows that I am a reliable mentor and leader, that brings a moral boost to any team I'm on.</p>
+        </div>
+        <div class="coral-blue" id="aboutSoftSkills">
+            <div class="softSkillSymbol" onclick='aboutSymbolSelect(this)'>
+                <img src="~/images/problem solver.png" alt="Collaboration image" />
+                <img src="~/images/problem solver contrast.png" alt="Collaboration image" />
+                <p> Problem Solver </p>
+                <p class="softSkillMessage"> My years of programming and tutoring have honed my problem-solving skills. I can adapt to any software related issue, no matter the algorithm or programming language. </p>
+            </div>
+            <div class="softSkillSymbol" onclick='aboutSymbolSelect(this)'>
+                <img src="~/images/mentor symbol.png" alt="Collaboration image" />
+                <img src="~/images/mentor symbol contrast.png" alt="Collaboration image" />
+                <p> Collaborative </p>
+                <p class="softSkillMessage"> A previous employer noted my ability as a mentor and invited me on a project to aid underclassmen. I am a people person that fits well in any team composition. </p>
+            </div>
+            <div class="softSkillSymbol" onclick='aboutSymbolSelect(this)'>
+                <img src="~/images/magnifying glass.png" alt="attention to detail image" />
+                <img src="~/images/magnifying glass contrast.png" alt="attention to detail image" />
+                <p> Attention to Detail </p>
+                <p class="softSkillMessage"> My strong work ethic and resilience allow me to thoroughly complete any task. Going above and beyond is my standard. </p>
+            </div>
+            <p id="aboutSoftSkillBody"> </p>
+        </div>
+    </div>
+    <div class="section section-spacing"> </div>
+    <div class="section" id="resume">
+        <div id="resumeDiv">
+            <div id="resumeContent">
+                <p id="resumeTitle"> Resume </p>
+                <a href="~/documents/Resume.docx" id="resumeDownload">  </a>
+            </div>
+            <div id="resumePic">
+                <img src="~/images/resume screenshot.png" alt="resume screenshot" />
+            </div>
+        </div>
+        <div id="contactMe">
+            <p id="contactMeTitle"> Contact Me! </p>
+            <div id="contactMeContents"> </div>
+            <div id="linksDiv">
+                <button id="linkedIn" class="btn-coral-round btn-description" onclick="window.open('https://www.linkedin.com/in/ronnie-clark-848a11109/', '_blank');"> </button>
+                <button id="github" class="btn-coral-round btn-description" onclick="window.open('https://github.com/youdom12', '_blank');"> </button>
+            </div>
+        </div>
+    </div>
+    <div class="section section-spacing"> </div>
+
+    
+    <div class="section" id="projects">
+        <p id="projectsTitle"> Projects </p>
+        <div class="project">
+            <img src="/images/webpagePhoto.PNG" alt="screen shot of webpage" />
+            <Button onclick="window.open('https://github.com/youdom12', '_blank');"> Webpage Portfolio </Button>
+            <p> This webpage incorporates a combination of HTML, CSS, JavaScript, and C#. I used CSS to implement webpage animations and user interface interaction feedback. I utilized React.js to encapsulate and rerender complex user interface elements. Using C# with ASP.Net Core framework, I developed REST API that returned dynamically generated cshtml payload.  </p>
+            <ul>
+                <li>jQuery</li>
+                <li>React.js</li>
+                <li>ASP.NET Core</li>
+                <li>MVC</li>
+            </ul>
+        </div>
+        <div class="project">
+            <img src="/images/loginSystemScreenShot.PNG" alt="screen shot of login form" />
+            <Button onclick="window.open('https://login.ronnieclark.net', '_blank');"> Login Authentication System </Button>
+            <p> I developed a web application that emulates the login process for your standard website. I made use of MySQL for database setup and queries. I accomplished login credentials validation with C#, and input validation with jQuery and React. I created this application on ASP.NET Core framework.</p>
+            <ul>
+                <li>MySql</li>
+                <li>jQuery</li>
+                <li>React.js</li>
+                <li>ASP.NET Core</li>
+                <li>MVC</li>
+            </ul>
+        </div>
+    </div>
+</body>
+</html>
+
